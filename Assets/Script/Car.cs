@@ -8,6 +8,8 @@ public class Car : MonoBehaviour
 
     private Rigidbody Rb;
 
+    private int packages = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +57,17 @@ public class Car : MonoBehaviour
             case Direction.none:
                 break;
         }
+    }
+
+    public void IncreasePackages()
+    {
+        packages++;
+    }
+
+    public void DeliverPackages()
+    {
+        GameController.instance.AddScore(packages);
+        packages = 0;
     }
 }
 

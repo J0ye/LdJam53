@@ -64,11 +64,11 @@ public class UIController : MonoBehaviour
         if (mainMenu.activeInHierarchy)
         {
             mainMenu.SetActive(false);
-            GameController.instance.PauseLevel();
+            GameController.instance.ResumeLevel();
         }
         else
         {
-            GameController.instance.ResumeLevel();
+            GameController.instance.PauseLevel();
             mainMenu.SetActive(true);
         }
     }
