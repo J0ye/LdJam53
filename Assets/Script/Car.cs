@@ -19,20 +19,41 @@ public class Car : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.W))
         {
-            transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+            SwitchOrientation(Direction.forward);
         }
         else if(Input.GetKey(KeyCode.S))
         {
-            transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+            SwitchOrientation(Direction.backwards);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
+            SwitchOrientation(Direction.left);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+            SwitchOrientation(Direction.right);
         }
         transform.position += transform.forward * Time.deltaTime * MoveSpeed;
+    }
+
+    public void SwitchOrientation(Direction newOrientation)
+    {
+        switch(newOrientation)
+        {
+            case Direction.forward:
+                transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                break;
+            case Direction.backwards: 
+                transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+                break;
+            case Direction.right:
+                transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+                break;
+            case Direction.left:
+                transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
+                break;
+            case Direction.none:
+                break;
+        }
     }
 }
