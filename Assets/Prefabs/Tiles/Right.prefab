@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -7166461262871279361}
   - component: {fileID: 1027786686575170792}
   m_Layer: 0
-  m_Name: ExampleTile
+  m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733bb0f80078fea428aba565f110caef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &1027786686575170792
 BoxCollider:
   m_ObjectHideFlags: 0
