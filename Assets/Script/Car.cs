@@ -23,7 +23,7 @@ public class Car : MonoBehaviour
         }
         else if(Input.GetKey(KeyCode.S))
         {
-            transform.rotation = Quaternion.Euler(-180.0f, 0.0f, 0.0f);
+            transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
         }
         else if (Input.GetKey(KeyCode.A))
         {
