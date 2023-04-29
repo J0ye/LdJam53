@@ -10,6 +10,8 @@ public class Car : MonoBehaviour
 
     private int packages = 0;
 
+    private Wall wall;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +70,14 @@ public class Car : MonoBehaviour
     {
         GameController.instance.AddScore(packages);
         packages = 0;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.TryGetComponent<Wall>(out wall))
+        {
+            GameController.instance.EndLevel();
+        }
     }
 }
 
