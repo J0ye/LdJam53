@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wall : MonoBehaviour
+public class CarCrash : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,14 @@ public class Wall : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        print("Here");
+        if (collision.gameObject.tag == "Wall")
+        {
+            GameController.instance.EndLevel();
+        }
     }
 }
