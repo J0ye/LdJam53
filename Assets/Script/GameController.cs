@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
+    public Player player;
 
     int score = 0;
+
 
     private void Awake()
     {
@@ -24,7 +26,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        UIController.instance.tileChooser.GenerateRandomTiles();
     }
 
     // Update is called once per frame

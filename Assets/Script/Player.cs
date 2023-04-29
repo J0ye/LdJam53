@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Grid _grid;
 
-    [SerializeField]
     private GameObject _objectToPlace;
 
     // Start is called before the first frame update
@@ -47,7 +46,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void SetObjectToPlace(GameObject tile)
+    public void SetObjectToPlace(GameObject tile)
     {
         _objectToPlace = Instantiate(tile);
     }
@@ -61,5 +60,6 @@ public class Player : MonoBehaviour
     void PlaceObjectOnTile(Vector3 point, GameObject tile)
     {
         tile.GetComponent<Tile>().isPlaced = true;
+        UIController.instance.tileChooser.GenerateRandomTiles();
     }
 }
