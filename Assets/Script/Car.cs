@@ -19,11 +19,11 @@ public class Car : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.W))
         {
-            SwitchOrientation(Direction.forward);
+            SwitchOrientation(Direction.up);
         }
         else if(Input.GetKey(KeyCode.S))
         {
-            SwitchOrientation(Direction.backwards);
+            SwitchOrientation(Direction.down);
         }
         else if (Input.GetKey(KeyCode.A))
         {
@@ -40,10 +40,10 @@ public class Car : MonoBehaviour
     {
         switch(newOrientation)
         {
-            case Direction.forward:
+            case Direction.up:
                 transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
                 break;
-            case Direction.backwards: 
+            case Direction.down: 
                 transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
                 break;
             case Direction.right:
