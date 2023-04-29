@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6934120753552347185, guid: c4640ad0af15d7c48864cdfc7eb6b713, type: 3}
       propertyPath: imageRotation
-      value: -90
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8883290164570637473, guid: c4640ad0af15d7c48864cdfc7eb6b713, type: 3}
       propertyPath: m_LocalPosition.y
