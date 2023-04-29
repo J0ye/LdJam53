@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: direction
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -7166461262871279361, guid: 1e39666b17cdac642b5dcccb5b8b225e, type: 3}
+      propertyPath: imageRotation
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 573828742911581295, guid: 1e39666b17cdac642b5dcccb5b8b225e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
