@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player3D : MonoBehaviour
+public class Tile : MonoBehaviour
 {
+    public bool isPlaced { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
