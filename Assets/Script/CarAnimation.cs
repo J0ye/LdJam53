@@ -5,6 +5,8 @@ using DG.Tweening;
 
 public class CarAnimation : MonoBehaviour
 {
+    [Header("Effects")]
+
     [Header("Wobble Options")]
     public float duration = 1f;
     public float wobbleDuration = 1f;
