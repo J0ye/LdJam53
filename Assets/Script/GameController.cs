@@ -7,7 +7,10 @@ public class GameController : GridOperator
 {
     public static GameController instance;
     public Player player;
-    public GameObject wallPrefab;
+    public GameObject destinationPrefab;
+    public GameObject parcelPrefab;
+    [Header("Game Options")]
+    public int amountOfStartingParcels = 3;
 
     /// <summary>
     /// The current score
@@ -37,7 +40,7 @@ public class GameController : GridOperator
     void Start()
     {
         UIController.instance.tileChooser.GenerateRandomTiles();
-        SpawnAtEdge();
+        SpawnNewJobs(amountOfStartingParcels);
     }
 
     // Update is called once per frame
@@ -45,17 +48,32 @@ public class GameController : GridOperator
     {
         
     }
-    public void SpawnAtEdge()
+
+    public void SpawnInInner(GameObject targetPrefab)
     {
-        Instantiate(wallPrefab, GetRandomEdgeCellPosition(), Quaternion.identity);
+        Instantiate(targetPrefab, GetRandomInnerCellPosition(), Quaternion.identity);
+    }
+
+    public void SpawnAtEdge(GameObject targetPrefab)
+    {
+        Instantiate(targetPrefab, GetRandomEdgeCellPosition(), Quaternion.identity);
     }
     public void SpawnAtEdges()
     {
-        List<Vector3> pos = GetEdgeCellsWorldPositions();
+        List<Vector3> pos = GetCellsWorldPositions();
 
         foreach(Vector3 p in pos)
         {
-            Instantiate(wallPrefab, p, Quaternion.identity);
+            Instantiate(destinationPrefab, p, Quaternion.identity);
+        }
+    }
+
+    public void SpawnNewJobs(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            SpawnAtEdge(destinationPrefab);
+            SpawnInInner(parcelPrefab);
         }
     }
 
@@ -124,5 +142,6 @@ public class GameController : GridOperator
         score += amount;
 
         UIController.instance.SetScore(score);
+        SpawnNewJobs(amount);
     }
 }

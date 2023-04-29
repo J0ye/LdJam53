@@ -6,11 +6,14 @@ public class GridOperator : MonoBehaviour
 {
     public Grid grid;
     public Vector3Int gridSize;
-    public List<Vector3> edgeCellsWorldPositions;
+    [HideInInspector]
+    public List<Vector3> edgeCellsWorldPositions = new List<Vector3>();
+    [HideInInspector]
+    public List<Vector3> innerCellsWorldPositions = new List<Vector3>();
 
     protected virtual void Awake()
     {
-        GetEdgeCellsWorldPositions();
+        GetCellsWorldPositions();
     }
 
     protected Vector3 GetNearestGridPoint(Vector3 point)
@@ -19,7 +22,7 @@ public class GridOperator : MonoBehaviour
         return grid.GetCellCenterWorld(cellPosition);
     }
 
-    public List<Vector3> GetEdgeCellsWorldPositions()
+    public List<Vector3> GetCellsWorldPositions()
     {
         edgeCellsWorldPositions = new List<Vector3>();
 
@@ -38,6 +41,12 @@ public class GridOperator : MonoBehaviour
                         Vector3 worldPosition = grid.GetCellCenterWorld(cellCoordinates);
                         edgeCellsWorldPositions.Add(worldPosition);
                     }
+                    else
+                    {
+                        Vector3Int cellCoordinates = new Vector3Int(x, y, z);
+                        Vector3 worldPosition = grid.GetCellCenterWorld(cellCoordinates);
+                        innerCellsWorldPositions.Add(worldPosition);
+                    }
                 }
             }
         }
@@ -50,5 +59,12 @@ public class GridOperator : MonoBehaviour
         int rand = Random.Range(0, edgeCellsWorldPositions.Count);
 
         return edgeCellsWorldPositions[rand];
+    }
+
+    public Vector3 GetRandomInnerCellPosition()
+    {
+        int rand = Random.Range(0, innerCellsWorldPositions.Count);
+
+        return innerCellsWorldPositions[rand];
     }
 }
