@@ -50,6 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 12
+  wobbleDuration: 1
+  wobbleStrength: 0.1
+  wobbleVibrato: 7
+  wobbleRandomness: 200
 --- !u!65 &2164415366780506016
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -268,6 +272,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8f40d3c162236042a2bab0f0b570613, type: 3}
+--- !u!1 &7429329141635371207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b8f40d3c162236042a2bab0f0b570613, type: 3}
+  m_PrefabInstance: {fileID: 7771856898540662166}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1764749013338085554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7429329141635371207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8b12d93b7a09d4bbe66b11d6ac2d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7805186554926860925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b8f40d3c162236042a2bab0f0b570613, type: 3}
