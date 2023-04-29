@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7166461262871279361, guid: 1e39666b17cdac642b5dcccb5b8b225e, type: 3}
+      propertyPath: imageTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: b4355fcfae9f27f4692df05ca0a9e6cc, type: 3}
+    - target: {fileID: -7166461262871279361, guid: 1e39666b17cdac642b5dcccb5b8b225e, type: 3}
+      propertyPath: imageRotation
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 2727558679642513626, guid: 1e39666b17cdac642b5dcccb5b8b225e, type: 3}
       propertyPath: m_Name
       value: Right Wall
