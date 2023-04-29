@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour
+public class GameController : GridOperator
 {
     public static GameController instance;
     public Player player;
+    public GameObject destinationPrefab;
+    public GameObject parcelPrefab;
+    [Header("Game Options")]
+    public int amountOfStartingParcels = 3;
 
     /// <summary>
     /// The current score
@@ -19,8 +23,9 @@ public class GameController : MonoBehaviour
     bool isPaused;
 
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         if(instance == null)
         {
             instance = this;
@@ -35,6 +40,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         UIController.instance.tileChooser.GenerateRandomTiles();
+        SpawnNewJobs(amountOfStartingParcels);
     }
 
     // Update is called once per frame
@@ -43,6 +49,35 @@ public class GameController : MonoBehaviour
         
     }
 
+    public void SpawnInInner(GameObject targetPrefab)
+    {
+        Instantiate(targetPrefab, GetRandomInnerCellPosition(), Quaternion.identity);
+    }
+
+    public void SpawnAtEdge(GameObject targetPrefab)
+    {
+        Instantiate(targetPrefab, GetRandomEdgeCellPosition(), Quaternion.identity);
+    }
+    public void SpawnAtEdges()
+    {
+        List<Vector3> pos = GetCellsWorldPositions();
+
+        foreach(Vector3 p in pos)
+        {
+            Instantiate(destinationPrefab, p, Quaternion.identity);
+        }
+    }
+
+    public void SpawnNewJobs(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            SpawnAtEdge(destinationPrefab);
+            SpawnInInner(parcelPrefab);
+        }
+    }
+
+    #region Menu Functions
     /// <summary>
     /// Starts the current level
     /// </summary>
@@ -96,6 +131,7 @@ public class GameController : MonoBehaviour
         PauseLevel();
         UIController.instance.ShowEndScreen(score);
     }
+    #endregion
 
     /// <summary>
     /// Add score to the game score
@@ -106,5 +142,6 @@ public class GameController : MonoBehaviour
         score += amount;
 
         UIController.instance.SetScore(score);
+        SpawnNewJobs(amount);
     }
 }

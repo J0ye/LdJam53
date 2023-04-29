@@ -102,8 +102,11 @@ public class Car : MonoBehaviour
 
     public void DeliverPackages()
     {
-        GameController.instance.AddScore(packages);
-        packages = 0;
+        if(packages > 0)
+        {
+            GameController.instance.AddScore(1);
+            packages--;
+        }
     }
 }
 
