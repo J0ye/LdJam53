@@ -31,6 +31,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall Top
       objectReference: {fileID: 0}
+    - target: {fileID: 7873185955426951209, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873185955426951209, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873185955426951209, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873185955426951209, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873185955426951209, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 8582510491667744960, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
       propertyPath: m_RootOrder
       value: 0
