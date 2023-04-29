@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour
+public class GameController : GridOperator
 {
     public static GameController instance;
     public Player player;
+    public GameObject wallPrefab;
 
     /// <summary>
     /// The current score
@@ -19,8 +20,9 @@ public class GameController : MonoBehaviour
     bool isPaused;
 
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         if(instance == null)
         {
             instance = this;
@@ -35,6 +37,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         UIController.instance.tileChooser.GenerateRandomTiles();
+        SpawnAtEdge();
     }
 
     // Update is called once per frame
@@ -42,7 +45,21 @@ public class GameController : MonoBehaviour
     {
         
     }
+    public void SpawnAtEdge()
+    {
+        Instantiate(wallPrefab, GetRandomEdgeCellPosition(), Quaternion.identity);
+    }
+    public void SpawnAtEdges()
+    {
+        List<Vector3> pos = GetEdgeCellsWorldPositions();
 
+        foreach(Vector3 p in pos)
+        {
+            Instantiate(wallPrefab, p, Quaternion.identity);
+        }
+    }
+
+    #region Menu Functions
     /// <summary>
     /// Starts the current level
     /// </summary>
@@ -96,6 +113,7 @@ public class GameController : MonoBehaviour
         PauseLevel();
         UIController.instance.ShowEndScreen(score);
     }
+    #endregion
 
     /// <summary>
     /// Add score to the game score

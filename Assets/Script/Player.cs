@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class Player : MonoBehaviour
+public class Player : GridOperator
 {
-    [SerializeField]
-    private Grid _grid;
 
     private GameObject _objectToPlace;
 
@@ -49,12 +47,6 @@ public class Player : MonoBehaviour
     public void SetObjectToPlace(GameObject tile)
     {
         _objectToPlace = Instantiate(tile);
-    }
-
-    Vector3 GetNearestGridPoint(Vector3 point)
-    {
-        Vector3Int cellPosition = _grid.WorldToCell(point);
-        return _grid.GetCellCenterWorld(cellPosition);
     }
 
     void PlaceObjectOnTile(Vector3 point, GameObject tile)
