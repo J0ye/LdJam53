@@ -19,7 +19,7 @@ public class DirectionTile : MonoBehaviour
             {
                 print("isCar");
                 // if other has Car component; go here
-                target.SwitchOrientation(direction);
+                target.SwitchOrientation(direction, true);
             }
         }
     }
