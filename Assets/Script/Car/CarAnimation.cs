@@ -6,7 +6,8 @@ using DG.Tweening;
 public class CarAnimation : MonoBehaviour
 {
     [Header("Effects")]
-    List<TrailRenderer> tireTracks = new List<TrailRenderer>();
+    public List<TrailRenderer> tireTracks = new List<TrailRenderer>();
+    public bool startingTireTrackState = false;
 
     [Header("Wobble Options")]
     public float duration = 1f;
@@ -23,6 +24,7 @@ public class CarAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SwitchTireTrackState(startingTireTrackState);
         StartPunch();
     }
 

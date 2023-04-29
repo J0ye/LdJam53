@@ -10479,6 +10479,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8b12d93b7a09d4bbe66b11d6ac2d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tireTracks:
+  - {fileID: 4966710934192372773}
+  - {fileID: 156513779496501103}
+  - {fileID: 3066395309848282232}
+  - {fileID: 4761687460484222094}
+  startingTireTrackState: 0
   duration: 1
   wobbleDuration: 1
   wobbleStrength: 0.1
