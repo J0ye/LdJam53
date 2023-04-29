@@ -24,12 +24,12 @@ public class TileButton : MonoBehaviour
         this.tile = tile;
         text.text = tile.name;
 
-        image.texture = tile.imageTexture;
-
-        if(this.tile.imageRotation > 0)
+        if (this.tile.imageRotation > 0)
         {
-            transform.Rotate(new Vector3(0.0f, 0.0f, this.tile.imageRotation));
+            image.transform.Rotate(new Vector3(0.0f, 0.0f, this.tile.imageRotation));
         }
+
+        image.texture = tile.imageTexture;
     }
 
     public void SelectTile()
