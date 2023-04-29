@@ -6,6 +6,7 @@ public class Car : MonoBehaviour
 {
     public float MoveSpeed = 12f;
     public float turnSpeed = 1f;
+    public CarAnimation carAnimation;
 
     private Rigidbody Rb;
 
@@ -45,6 +46,7 @@ public class Car : MonoBehaviour
             {
                 // Do move the car when there is no turning animation
                 doMove = true;
+                carAnimation.SwitchTireTrackState(false);
             }
         }
         if (doMove) transform.position += transform.forward * Time.deltaTime * MoveSpeed;
@@ -77,6 +79,7 @@ public class Car : MonoBehaviour
             SwitchOrientation(newOrientation);
         }
         doMove = false;
+        carAnimation.SwitchTireTrackState(true);
         switch (newOrientation)
         {
             case Direction.up:

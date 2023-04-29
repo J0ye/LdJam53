@@ -6,6 +6,7 @@ using DG.Tweening;
 public class CarAnimation : MonoBehaviour
 {
     [Header("Effects")]
+    List<TrailRenderer> tireTracks = new List<TrailRenderer>();
 
     [Header("Wobble Options")]
     public float duration = 1f;
@@ -28,12 +29,20 @@ public class CarAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (!tween.active)
         {
             StartPunch();
         }
     }
+
+    public void SwitchTireTrackState(bool state)
+    {
+        foreach(TrailRenderer tr in tireTracks)
+        {
+            tr.emitting = state;
+        }
+    }
+
     public void StartWobble()
     {
         wobble = transform.DOShakeScale(wobbleDuration, wobbleStrength, wobbleVibrato, wobbleRandomness, false);
