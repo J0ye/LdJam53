@@ -11,6 +11,26 @@ PrefabInstance:
       propertyPath: direction
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 573828742911581295, guid: 1e39666b17cdac642b5dcccb5b8b225e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.249
+      objectReference: {fileID: 0}
+    - target: {fileID: 573828742911581295, guid: 1e39666b17cdac642b5dcccb5b8b225e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 573828742911581295, guid: 1e39666b17cdac642b5dcccb5b8b225e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 573828742911581295, guid: 1e39666b17cdac642b5dcccb5b8b225e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617926397239193833, guid: 1e39666b17cdac642b5dcccb5b8b225e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c54c15c36730a24b9650e46c6ce627d, type: 2}
     - target: {fileID: 2727558679642513626, guid: 1e39666b17cdac642b5dcccb5b8b225e, type: 3}
       propertyPath: m_Name
       value: Down
