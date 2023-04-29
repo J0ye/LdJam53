@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4052144743527759543}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: ToggleMainMenu
         m_Mode: 1
@@ -1334,9 +1334,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6757291657481337786, guid: 896e6e3f780c37a49a52349de21233b3, type: 3}
+      - m_Target: {fileID: 4339823149353163399}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: StartLevel
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
