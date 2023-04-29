@@ -6,4 +6,5 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public bool isPlaced { get; set; }
+
 }
