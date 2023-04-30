@@ -17,8 +17,7 @@ public class GameController : GridOperator
     public int amountOfStartingParcels = 3;
     public int amountOfObstacles = 2;
 
-    [SerializeField]
-    private GigaGrid gigaGrid;
+    public GigaGrid gigaGrid;
 
     /// <summary>
     /// The current score

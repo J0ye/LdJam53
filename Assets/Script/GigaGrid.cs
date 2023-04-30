@@ -14,7 +14,7 @@ public class GigaGrid : MonoBehaviour
         grid = GetComponent<Grid>();
     }
 
-    public bool GetAt(Vector3Int position)
+    public Tile GetAt(Vector3Int position)
     {
         Tile tile = null;
         if (tiles.ContainsKey(position))
@@ -53,13 +53,25 @@ public class GigaGrid : MonoBehaviour
         {
             tiles.Add(position, tile);
         }
+        tile.OnPlace();
+    }
+
+    public void RemoveTile(Vector3 position)
+    {
+        Vector3Int gridPosition = grid.WorldToCell(position);
+        RemoveTile(gridPosition);
     }
 
     public void RemoveTile(Vector3Int position)
     {
         // get the cell center in world position
         Vector3 worldPosition = grid.GetCellCenterWorld(position);
-        tiles.Remove(position);
+        Tile tile = GetAt(position);
+        if(tile == null)
+        {
+            tiles.Remove(position);
+            Destroy(tile.gameObject);
+        }
     }
 
     public Vector3 GetNearestGridPoint(Vector3 point)
