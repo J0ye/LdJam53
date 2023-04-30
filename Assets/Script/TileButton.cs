@@ -7,9 +7,6 @@ using UnityEngine.UI;
 public class TileButton : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text text;
-
-    [SerializeField]
     private RawImage image;
 
     public GameObject tileCameraPrefab;
@@ -39,17 +36,9 @@ public class TileButton : MonoBehaviour
     public void SetTile(Tile tile)
     {
         this.tile = tile;
-        // text.text = tile.name;
-        GameObject tileClone = Instantiate(tile.gameObject, Vector3.zero, Quaternion.identity, tileCamera.transform);
+        GameObject tileClone = Instantiate(tile.gameObject, tileCamera.transform);
         tileClone.transform.localPosition = Vector3.zero;
         image.texture = tileCameraTexture;
-
-        //if (this.tile.imageRotation > 0)
-        //{
-        //    image.transform.Rotate(new Vector3(0.0f, 0.0f, this.tile.imageRotation));
-        //}
-
-        //image.texture = tile.imageTexture;
     }
 
     public void SelectTile()
