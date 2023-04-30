@@ -10,6 +10,11 @@ public class Player : MonoBehaviour
     GigaGrid gigaGrid;
     private GameObject _objectToPlace;
 
+    [SerializeField]
+    private AudioClip actionSound;
+
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +24,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,7 +45,6 @@ public class Player : MonoBehaviour
                 {
                     //spawn tower on server
                     PlaceObjectOnTile(point, _objectToPlace);
-                    
                 }
             }
         }
@@ -66,6 +70,8 @@ public class Player : MonoBehaviour
             {
                 Destroy(_objectToPlace);
                 _objectToPlace = null;
+
+                audioSource.PlayOneShot(actionSound);
 
                 // Generate new tiles to choose frmo
                 UIController.instance.tileChooser.GenerateRandomTiles();

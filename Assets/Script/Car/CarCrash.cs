@@ -11,6 +11,7 @@ public class CarCrash : MonoBehaviour
         {
             print("Here");
             transform.parent.GetComponent<Car>().enabled = false;
+            transform.parent.GetComponent<Car>().PlayCrashSound();
             GameController.instance.EndLevel();
         }
     }

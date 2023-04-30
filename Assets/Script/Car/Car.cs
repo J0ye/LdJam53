@@ -19,10 +19,22 @@ public class Car : MonoBehaviour
     private Tween turnTween;
     private int packages = 0;
 
+    [SerializeField]
+    private AudioClip tireScreechSound;
+    [SerializeField]
+    private AudioClip crashSound;
+    [SerializeField]
+    private AudioClip deliverSound;
+    [SerializeField]
+    private AudioClip packageSound;
+
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         Rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -121,6 +133,8 @@ public class Car : MonoBehaviour
             case Direction.none:
                 break;
         }
+
+        audioSource.PlayOneShot(tireScreechSound);
     }
     public void IncreasePackages()
     {
@@ -130,6 +144,8 @@ public class Car : MonoBehaviour
         followComponent.car = gameObject;
         followComponent.positionInChain = followers.Count;
         packages++;
+
+        audioSource.PlayOneShot(packageSound);
     }
 
     public bool DeliverPackages()
@@ -142,12 +158,19 @@ public class Car : MonoBehaviour
             followers = new List<GameObject>();
             GameController.instance.AddScore(packages);
             packages = 0;
+
+            audioSource.PlayOneShot(deliverSound);
             return true;
         }
         else
         {
             return false;
         }
+    }
+
+    public void PlayCrashSound()
+    {
+        audioSource.PlayOneShot(crashSound);
     }
 
     public void OnDrawGizmos()
