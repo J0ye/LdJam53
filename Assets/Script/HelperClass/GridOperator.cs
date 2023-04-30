@@ -16,12 +16,6 @@ public class GridOperator : MonoBehaviour
         GetCellsWorldPositions();
     }
 
-    protected Vector3 GetNearestGridPoint(Vector3 point)
-    {
-        Vector3Int cellPosition = grid.WorldToCell(point);
-        return grid.GetCellCenterWorld(cellPosition);
-    }
-
     public List<Vector3> GetCellsWorldPositions()
     {
         edgeCellsWorldPositions = new List<Vector3>();
