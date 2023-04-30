@@ -57,6 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
+--- !u!1 &6807324409852239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1316375110429025605, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
+  m_PrefabInstance: {fileID: 1323102857676215306}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2106271608565922371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114,6 +119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
+--- !u!1 &1116416542100578054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1316375110429025605, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
+  m_PrefabInstance: {fileID: 2106271608565922371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3199544153196610060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,6 +183,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left Wall Opposite
       objectReference: {fileID: 0}
+    - target: {fileID: 6934120753552347185, guid: c4640ad0af15d7c48864cdfc7eb6b713, type: 3}
+      propertyPath: walls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934120753552347185, guid: c4640ad0af15d7c48864cdfc7eb6b713, type: 3}
+      propertyPath: walls.Array.data[0]
+      value: 
+      objectReference: {fileID: 6807324409852239}
+    - target: {fileID: 6934120753552347185, guid: c4640ad0af15d7c48864cdfc7eb6b713, type: 3}
+      propertyPath: walls.Array.data[1]
+      value: 
+      objectReference: {fileID: 1116416542100578054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4640ad0af15d7c48864cdfc7eb6b713, type: 3}
 --- !u!4 &8434190123419400732 stripped

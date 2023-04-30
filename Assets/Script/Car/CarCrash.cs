@@ -7,10 +7,10 @@ public class CarCrash : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        print("Here");
-        transform.parent.GetComponent<Car>().enabled = false;
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Wall") && collision.gameObject.GetComponent<Wall>().tile.isPlaced == true)
         {
+            print("Here");
+            transform.parent.GetComponent<Car>().enabled = false;
             GameController.instance.EndLevel();
         }
     }
