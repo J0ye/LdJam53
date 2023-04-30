@@ -194,7 +194,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -217,8 +217,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471586013}
-  m_LocalRotation: {x: 0.34690136, y: -0.3078279, z: 0.121686414, w: 0.87754995}
-  m_LocalPosition: {x: 12.5130005, y: 12.308, z: -13.75}
+  m_LocalRotation: {x: 0.37514883, y: -0.24587843, z: 0.1039102, w: 0.8876992}
+  m_LocalPosition: {x: 8.3, y: 16.36, z: -13.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -360,6 +360,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1735554924}
     - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
+      propertyPath: gigaGrid
+      value: 
+      objectReference: {fileID: 1709695328}
+    - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
       propertyPath: gridSize.x
       value: 10
       objectReference: {fileID: 0}
@@ -394,19 +398,19 @@ PrefabInstance:
     - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
       propertyPath: obstacles.Array.data[0]
       value: 
-      objectReference: {fileID: 8293278562367643389, guid: 144bd9220fe937d4e9c0a826bf8d5b06, type: 3}
+      objectReference: {fileID: 3722798128866159996, guid: a34d10378228a4b4db2e430d0d06fd73, type: 3}
     - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
       propertyPath: obstacles.Array.data[1]
       value: 
-      objectReference: {fileID: 7345773876284381641, guid: b3f620a6391e67c4cbca7d8fd1dc8462, type: 3}
+      objectReference: {fileID: 2523074223360834548, guid: 11fd2037e9c6e0346ad5a04a39077bf1, type: 3}
     - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
       propertyPath: obstacles.Array.data[2]
       value: 
-      objectReference: {fileID: 3548835900221601027, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
+      objectReference: {fileID: 1971655523395888062, guid: dd254ce41ec265e408f7a21a72a7e4df, type: 3}
     - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
       propertyPath: obstacles.Array.data[3]
       value: 
-      objectReference: {fileID: 2707457621744074022, guid: c4ced3454c43fe64ea4364e915ccb28e, type: 3}
+      objectReference: {fileID: 2985182103660578944, guid: 35f4e1300c1ca744bb60bf2265f47700, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
 --- !u!1 &708733747
@@ -420,7 +424,6 @@ GameObject:
   - component: {fileID: 708733748}
   - component: {fileID: 708733751}
   - component: {fileID: 708733752}
-  - component: {fileID: 708733753}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -464,28 +467,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 708733747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BindingMode: 4
-  m_FollowOffset: {x: 8, y: 12, z: -10}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
-  m_AngularDampingMode: 0
-  m_PitchDamping: 0
-  m_YawDamping: 0
-  m_RollDamping: 0
-  m_AngularDamping: 0
---- !u!114 &708733753
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708733747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -497,8 +478,8 @@ MonoBehaviour:
   m_VerticalDamping: 0.5
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
+  m_DeadZoneWidth: 0.64
+  m_DeadZoneHeight: 0.58
   m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
@@ -528,7 +509,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728245629}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
@@ -543,7 +524,7 @@ MonoBehaviour:
   m_Follow: {fileID: 134997161}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 7.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -566,8 +547,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728245629}
-  m_LocalRotation: {x: 0.34690136, y: -0.3078279, z: 0.121686414, w: 0.87754995}
-  m_LocalPosition: {x: 12.5130005, y: 12.308, z: -13.75}
+  m_LocalRotation: {x: 0.37514883, y: -0.24587843, z: 0.1039102, w: 0.8876992}
+  m_LocalPosition: {x: 10.5130005, y: 12.308, z: -13.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -883,7 +864,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 732577486482074449, guid: 9bc48d24542bc1a45bc88362e28d22ec, type: 3}
       propertyPath: MoveSpeed
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 732577486482074449, guid: 9bc48d24542bc1a45bc88362e28d22ec, type: 3}
       propertyPath: lm.m_Bits
@@ -980,6 +961,17 @@ Grid:
   m_CorrespondingSourceObject: {fileID: 3299745133227744020, guid: 4382c3d6dd7498c41b6df87ede727620, type: 3}
   m_PrefabInstance: {fileID: 3299745132511854366}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1709695328 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3457161640783912806, guid: 4382c3d6dd7498c41b6df87ede727620, type: 3}
+  m_PrefabInstance: {fileID: 3299745132511854366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb6be1bc061795643ae400bdf458968f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1735554924 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8708250862522755104, guid: b3179a71ac5be9d4b98b85e011d69c22, type: 3}
@@ -1147,6 +1139,10 @@ PrefabInstance:
       propertyPath: _grid
       value: 
       objectReference: {fileID: 1542218762}
+    - target: {fileID: 8708250862522755104, guid: b3179a71ac5be9d4b98b85e011d69c22, type: 3}
+      propertyPath: gigaGrid
+      value: 
+      objectReference: {fileID: 1709695328}
     - target: {fileID: 8708250862522755104, guid: b3179a71ac5be9d4b98b85e011d69c22, type: 3}
       propertyPath: gridSize.x
       value: 10

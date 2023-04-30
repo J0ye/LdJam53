@@ -48,6 +48,7 @@ public class GigaGrid : MonoBehaviour
 
     private void PlaceTile(Vector3Int position, Tile tile)
     {
+        print(tile.gameObject.name);
         tile.isPlaced = true;
         if (!tiles.ContainsKey(position))
         {
