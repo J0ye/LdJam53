@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Tile))]
-public class PackageTile : MonoBehaviour
+public class PackageTile : TargetTile
 {
     public void OnTriggerEnter(Collider other)
     {
