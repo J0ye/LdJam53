@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, lm))
             {
-                Debug.Log(hit.transform.name);
                 var point = gigaGrid.GetNearestGridPoint(hit.point);
                 //place object on mouse pos
                 _objectToPlace.transform.position = point;
@@ -41,7 +40,7 @@ public class Player : MonoBehaviour
                 {
                     //spawn tower on server
                     PlaceObjectOnTile(point, _objectToPlace);
-                    _objectToPlace = null;
+                    
                 }
             }
         }
@@ -55,10 +54,14 @@ public class Player : MonoBehaviour
 
     void PlaceObjectOnTile(Vector3 point, GameObject tile)
     {
-        gigaGrid.PlaceTile(point, tile);
-        Destroy(_objectToPlace);
+        if (gigaGrid.IsValidPlacement(point))
+        {
+            gigaGrid.PlaceTile(point, tile);
+            Destroy(_objectToPlace);
+            _objectToPlace = null;
 
-        // Generate new tiles to choose frmo
-        UIController.instance.tileChooser.GenerateRandomTiles();
+            // Generate new tiles to choose frmo
+            UIController.instance.tileChooser.GenerateRandomTiles();
+        }
     }
 }

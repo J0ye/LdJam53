@@ -51,32 +51,12 @@ public class GameController : GridOperator
         SpawnObstacles();
     }
 
-    public void SpawnInInner(GameObject targetPrefab)
-    {
-        Spawn(targetPrefab, GetRandomInnerCellPosition());
-    }
-
-    public void SpawnAtEdge(GameObject targetPrefab)
-    {
-        Spawn(targetPrefab, GetRandomEdgeCellPosition());
-    }
-    public void SpawnAtEdges()
-    {
-        List<Vector3> pos = GetCellsWorldPositions();
-
-        foreach(Vector3 p in pos)
-        {
-            gigaGrid.PlaceTile(p, destinationPrefab);
-            //Instantiate(destinationPrefab, p, Quaternion.identity);
-        }
-    }
-
     public void SpawnNewJobs(int amount)
     {
         for (int i = 0; i < amount; i++)
         {
-            SpawnAtEdge(destinationPrefab);
-            SpawnInInner(parcelPrefab);
+            SpawnNotOnGrid(destinationPrefab, GetRandomEdgeCellPosition());
+            SpawnNotOnGrid(parcelPrefab, GetRandomInnerCellPosition());
         }
     }
 
@@ -85,7 +65,7 @@ public class GameController : GridOperator
         for(int i = 0; i < amountOfObstacles; i++)
         {
             int rand = Random.Range(0, obstacles.Count);
-            SpawnInInner(obstacles[rand]);
+            Spawn(obstacles[rand], GetRandomInnerCellPosition());
         }
     }
 
@@ -93,13 +73,20 @@ public class GameController : GridOperator
     {
         GameObject newObject = gigaGrid.PlaceTile(targetPosition - Vector3.up, targetObject);
         newObject.transform.DOMove(targetPosition, spawnDuration);
+
     }
 
-    #region Menu Functions
-    /// <summary>
-    /// Starts the current level
-    /// </summary>
-    public void StartLevel()
+    private void SpawnNotOnGrid(GameObject targetObject, Vector3 targetPosition)
+    {
+        GameObject newObject = Instantiate(targetObject, targetPosition - Vector3.up, Quaternion.identity);
+        newObject.transform.DOMove(targetPosition, spawnDuration);
+    }
+
+        #region Menu Functions
+        /// <summary>
+        /// Starts the current level
+        /// </summary>
+        public void StartLevel()
     {
         // Spawn the first customer
         ResumeLevel();

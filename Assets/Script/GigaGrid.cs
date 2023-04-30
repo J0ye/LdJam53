@@ -14,6 +14,17 @@ public class GigaGrid : MonoBehaviour
         grid = GetComponent<Grid>();
     }
 
+    public bool IsValidPlacement(Vector3 worldPosition)
+    {
+        bool isValid = true;
+        Vector3Int position = grid.WorldToCell(worldPosition);
+        if (tiles.ContainsKey(position))
+        {
+            isValid = false;
+        }
+        return isValid;
+    }
+
     public Tile GetAt(Vector3Int position)
     {
         Tile tile = null;
