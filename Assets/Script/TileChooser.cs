@@ -53,6 +53,7 @@ public class TileChooser : MonoBehaviour
             newButton.GetComponent<TileButton>().SetIndex(i);
             newButton.GetComponent<TileButton>().SetTile(tile);
         }
+        print("choosing random");
     }
 
     public Tile GetRandom()
