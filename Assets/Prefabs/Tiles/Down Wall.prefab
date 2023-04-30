@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6508323023429421750, guid: d34f391b3a220e0438a5df0d6758c9e9, type: 3}
+      propertyPath: walls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508323023429421750, guid: d34f391b3a220e0438a5df0d6758c9e9, type: 3}
+      propertyPath: walls.Array.data[0]
+      value: 
+      objectReference: {fileID: 9109193440953504549}
     - target: {fileID: 7134709061908701843, guid: d34f391b3a220e0438a5df0d6758c9e9, type: 3}
       propertyPath: m_Name
       value: Down Wall
@@ -119,3 +127,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4ced3454c43fe64ea4364e915ccb28e, type: 3}
+--- !u!1 &9109193440953504549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 498097588515351904, guid: c4ced3454c43fe64ea4364e915ccb28e, type: 3}
+  m_PrefabInstance: {fileID: 8683998027120492101}
+  m_PrefabAsset: {fileID: 0}
