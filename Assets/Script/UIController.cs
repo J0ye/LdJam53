@@ -77,7 +77,7 @@ public class UIController : MonoBehaviour
     {
         endScore.text = score.ToString();
         endScreen.SetActive(true);
-        audioSource.Play();
+        //audioSource.Play();
     }
 
     public void HideEndScreen()

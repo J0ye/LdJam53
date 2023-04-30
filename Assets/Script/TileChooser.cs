@@ -39,6 +39,7 @@ public class TileChooser : MonoBehaviour
             int random = Random.Range(0, possibleTiles.Length);
             var tile = possibleTiles[random];
             var newButton = Instantiate(tileButtonPrefab, gameObject.transform);
+            newButton.GetComponent<TileButton>().SetIndex(i);
             newButton.GetComponent<TileButton>().SetTile(tile);
         }
     }
