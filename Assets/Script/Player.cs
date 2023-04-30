@@ -48,20 +48,28 @@ public class Player : MonoBehaviour
 
     public void SetObjectToPlace(GameObject tile)
     {
-        Destroy(_objectToPlace);
+        RemoveObjectToPlace();
         _objectToPlace = Instantiate(tile);
+    }
+
+    public void RemoveObjectToPlace()
+    {
+        Destroy(_objectToPlace);
     }
 
     void PlaceObjectOnTile(Vector3 point, GameObject tile)
     {
-        if (gigaGrid.IsValidPlacement(point))
+        if (gigaGrid.IsValidPlacement(point, tile))
         {
-            gigaGrid.PlaceTile(point, tile);
-            Destroy(_objectToPlace);
-            _objectToPlace = null;
+            var success = gigaGrid.PlaceTile(point, tile);
+            if(success != null)
+            {
+                Destroy(_objectToPlace);
+                _objectToPlace = null;
 
-            // Generate new tiles to choose frmo
-            UIController.instance.tileChooser.GenerateRandomTiles();
+                // Generate new tiles to choose frmo
+                UIController.instance.tileChooser.GenerateRandomTiles();
+            }
         }
     }
 }
