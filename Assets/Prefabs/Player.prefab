@@ -44,4 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae9905e1adf63d4459edc2017a9f8bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _grid: {fileID: 0}
+  lm:
+    serializedVersion: 2
+    m_Bits: 64
+  gigaGrid: {fileID: 0}

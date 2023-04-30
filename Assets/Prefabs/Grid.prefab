@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3299745133227744023}
   - component: {fileID: 3299745133227744020}
   - component: {fileID: 3457161640783912806}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Grid
   m_TagString: Board
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 8862332044616001540}
   - component: {fileID: 6379478913553238530}
   - component: {fileID: 1018588403476774089}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
