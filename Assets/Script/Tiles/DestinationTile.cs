@@ -10,10 +10,11 @@ public class DestinationTile : TargetTile
         if (other.gameObject.TryGetComponent<Car>(out Car car))
         {
             // give the package to car
-            car.DeliverPackages();
-
-            // destroy the package object
-            Destroy(gameObject);
+            if(car.DeliverPackages())
+            {
+                // Only destroy the package if delivery was successful
+                Destroy(gameObject);
+            }
         }
     }
 }

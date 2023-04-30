@@ -132,7 +132,7 @@ public class Car : MonoBehaviour
         packages++;
     }
 
-    public void DeliverPackages()
+    public bool DeliverPackages()
     {
         if(packages > 0)
         {
@@ -141,6 +141,11 @@ public class Car : MonoBehaviour
             Destroy(temp);
             GameController.instance.AddScore(1);
             packages--;
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
