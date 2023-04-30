@@ -8,6 +8,8 @@ public class Tile : MonoBehaviour
 {
     public bool isPlaced { get; set; }
 
+    public bool consumesSpace = true;
+
     private void Start()
     {
         foreach (Wall child in transform.GetComponentsInChildren<Wall>())
@@ -15,6 +17,11 @@ public class Tile : MonoBehaviour
             child.tile = this;
         }
     }
+    public virtual bool BeforePlace()
+    {
+        return true;
+    }
+
     public virtual void OnPlace()
     {
 
