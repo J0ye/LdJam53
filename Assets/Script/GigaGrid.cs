@@ -14,13 +14,18 @@ public class GigaGrid : MonoBehaviour
         grid = GetComponent<Grid>();
     }
 
-    public bool IsValidPlacement(Vector3 worldPosition)
+    public bool IsValidPlacement(Vector3 worldPosition, GameObject tileObj)
     {
         bool isValid = true;
-        Vector3Int position = grid.WorldToCell(worldPosition);
-        if (tiles.ContainsKey(position))
+        Tile tile;
+        tileObj.TryGetComponent<Tile>(out tile);
+        if (tile.consumesSpace)
         {
-            isValid = false;
+            Vector3Int position = grid.WorldToCell(worldPosition);
+            if (tiles.ContainsKey(position))
+            {
+                isValid = false;
+            }
         }
         return isValid;
     }
@@ -42,8 +47,7 @@ public class GigaGrid : MonoBehaviour
 
         var newTile = Instantiate(tilePrefab, worldPositionCenter, Quaternion.identity);
 
-        PlaceTile(position, newTile.GetComponent<Tile>());
-        return newTile;
+        return PlaceTile(position, newTile.GetComponent<Tile>());
     }
 
     public GameObject PlaceTile(Vector3Int position, GameObject tilePrefab)
@@ -53,37 +57,47 @@ public class GigaGrid : MonoBehaviour
 
         var newTile = Instantiate(tilePrefab, worldPosition, Quaternion.identity);
 
-        PlaceTile(position, newTile.GetComponent<Tile>());
-        return newTile;
+        return PlaceTile(position, newTile.GetComponent<Tile>());
     }
 
-    private void PlaceTile(Vector3Int position, Tile tile)
+    private GameObject PlaceTile(Vector3Int position, Tile tile)
     {
-        print(tile.gameObject.name);
-        tile.isPlaced = true;
-        if (!tiles.ContainsKey(position))
+        if (tile.BeforePlace())
         {
-            tiles.Add(position, tile);
+            tile.isPlaced = true;
+            if (!tiles.ContainsKey(position))
+            {
+                tiles.Add(position, tile);
+            }
+            tile.OnPlace();
+
+            return tile.gameObject;
         }
-        tile.OnPlace();
+        else
+        {
+            Destroy(tile.gameObject);
+        }
+        return null;
     }
 
-    public void RemoveTile(Vector3 position)
+    public bool RemoveTile(Vector3 position)
     {
         Vector3Int gridPosition = grid.WorldToCell(position);
-        RemoveTile(gridPosition);
+        return RemoveTile(gridPosition);
     }
 
-    public void RemoveTile(Vector3Int position)
+    public bool RemoveTile(Vector3Int position)
     {
         // get the cell center in world position
         Vector3 worldPosition = grid.GetCellCenterWorld(position);
         Tile tile = GetAt(position);
-        if(tile == null)
+        if(tile != null)
         {
             tiles.Remove(position);
             Destroy(tile.gameObject);
+            return true;
         }
+        return false;
     }
 
     public Vector3 GetNearestGridPoint(Vector3 point)
