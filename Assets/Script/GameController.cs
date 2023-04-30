@@ -67,7 +67,8 @@ public class GameController : GridOperator
 
         foreach(Vector3 p in pos)
         {
-            Instantiate(destinationPrefab, p, Quaternion.identity);
+            gigaGrid.PlaceTile(p, destinationPrefab);
+            //Instantiate(destinationPrefab, p, Quaternion.identity);
         }
     }
 
