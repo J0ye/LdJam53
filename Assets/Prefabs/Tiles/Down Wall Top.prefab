@@ -23,6 +23,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4681983664138210138, guid: 09987fd28a078674799574f683f16564, type: 3}
+      propertyPath: walls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681983664138210138, guid: 09987fd28a078674799574f683f16564, type: 3}
+      propertyPath: walls.Array.data[0]
+      value: 
+      objectReference: {fileID: 3951644884003442528}
     - target: {fileID: 8766289726949172091, guid: 09987fd28a078674799574f683f16564, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -73,3 +81,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09987fd28a078674799574f683f16564, type: 3}
+--- !u!1 &3951644884003442528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9109193440953504549, guid: 09987fd28a078674799574f683f16564, type: 3}
+  m_PrefabInstance: {fileID: 5241428253068614725}
+  m_PrefabAsset: {fileID: 0}
