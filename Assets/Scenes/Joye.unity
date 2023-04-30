@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 929740130}
-  m_IndirectSpecularColor: {r: 0, g: 0.51710165, b: 0.8145218, a: 1}
+  m_IndirectSpecularColor: {r: 0.13923919, g: 0.4563728, b: 0.49271882, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -698,6 +698,42 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: possibleTiles.Array.size
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: possibleTiles.Array.data[16]
+      value: 
+      objectReference: {fileID: 3852686396511164314, guid: 12117cba6448c2a4da094730a27d2abc, type: 3}
+    - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: possibleTiles.Array.data[17]
+      value: 
+      objectReference: {fileID: 3852686396511164314, guid: 12117cba6448c2a4da094730a27d2abc, type: 3}
+    - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: possibleTiles.Array.data[18]
+      value: 
+      objectReference: {fileID: 3852686396511164314, guid: 12117cba6448c2a4da094730a27d2abc, type: 3}
+    - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: possibleTiles.Array.data[19]
+      value: 
+      objectReference: {fileID: 3852686396511164314, guid: 12117cba6448c2a4da094730a27d2abc, type: 3}
+    - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: possibleTiles.Array.data[20]
+      value: 
+      objectReference: {fileID: 3852686396511164314, guid: 12117cba6448c2a4da094730a27d2abc, type: 3}
+    - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: possibleTiles.Array.data[21]
+      value: 
+      objectReference: {fileID: 3852686396511164314, guid: 12117cba6448c2a4da094730a27d2abc, type: 3}
+    - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: possibleTiles.Array.data[22]
+      value: 
+      objectReference: {fileID: 3852686396511164314, guid: 12117cba6448c2a4da094730a27d2abc, type: 3}
+    - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: possibleTiles.Array.data[23]
+      value: 
+      objectReference: {fileID: 3852686396511164314, guid: 12117cba6448c2a4da094730a27d2abc, type: 3}
     - target: {fileID: 8247824640343582614, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0

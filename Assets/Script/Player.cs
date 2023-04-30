@@ -51,7 +51,7 @@ public class Player : GridOperator
 
     void PlaceObjectOnTile(Vector3 point, GameObject tile)
     {
-        tile.GetComponent<Tile>().isPlaced = true;
+        tile.GetComponent<Tile>().IsPlaced(true);
         UIController.instance.tileChooser.GenerateRandomTiles();
     }
 }
