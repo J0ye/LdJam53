@@ -38,7 +38,7 @@ public class TileChooser : MonoBehaviour
         // choose random
         for (int i = 0; i < maxTiles; i++)
         {
-            var tile = GetRandom();
+            Tile tile = GetRandom();
             if (tile.TryGetComponent<DirectionTile>(out DirectionTile directionTile))
             {
                 if (tiles.Where(i => i.GetComponent<DirectionTile>()?.direction == directionTile.direction).Any())
@@ -48,7 +48,7 @@ public class TileChooser : MonoBehaviour
                 }
             }
 
-            var newButton = Instantiate(tileButtonPrefab, gameObject.transform);
+            GameObject newButton = Instantiate(tileButtonPrefab, gameObject.transform);
             tiles.Add(tile);
             newButton.GetComponent<TileButton>().SetIndex(i);
             newButton.GetComponent<TileButton>().SetTile(tile);
