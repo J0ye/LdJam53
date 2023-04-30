@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class Player : GridOperator
+public class Player : MonoBehaviour
 {
-
+    [SerializeField]
+    GigaGrid gigaGrid;
     private GameObject _objectToPlace;
 
     // Start is called before the first frame update
@@ -29,7 +30,7 @@ public class Player : GridOperator
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                var point = GetNearestGridPoint(hit.point);
+                var point = gigaGrid.GetNearestGridPoint(hit.point);
                 //place object on mouse pos
                 _objectToPlace.transform.position = point;
 
@@ -51,7 +52,10 @@ public class Player : GridOperator
 
     void PlaceObjectOnTile(Vector3 point, GameObject tile)
     {
-        tile.GetComponent<Tile>().IsPlaced(true);
+        gigaGrid.PlaceTile(point, tile);
+        Destroy(_objectToPlace);
+
+        // Generate new tiles to choose frmo
         UIController.instance.tileChooser.GenerateRandomTiles();
     }
 }

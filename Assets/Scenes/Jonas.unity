@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.3608194, b: 0.8145218, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.51710165, b: 0.8145218, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -304,6 +304,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1735554924}
+    - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
+      propertyPath: gigaGrid
+      value: 
+      objectReference: {fileID: 3299745132511854367}
     - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
       propertyPath: gridSize.x
       value: 10
@@ -807,6 +811,17 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ac639223a3c0e654fb54f3814145382a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4382c3d6dd7498c41b6df87ede727620, type: 3}
+--- !u!114 &3299745132511854367 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3457161640783912806, guid: 4382c3d6dd7498c41b6df87ede727620, type: 3}
+  m_PrefabInstance: {fileID: 3299745132511854366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb6be1bc061795643ae400bdf458968f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8708250860932177740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -822,6 +837,10 @@ PrefabInstance:
       propertyPath: _grid
       value: 
       objectReference: {fileID: 1542218762}
+    - target: {fileID: 8708250862522755104, guid: b3179a71ac5be9d4b98b85e011d69c22, type: 3}
+      propertyPath: gigaGrid
+      value: 
+      objectReference: {fileID: 3299745132511854367}
     - target: {fileID: 8708250862522755104, guid: b3179a71ac5be9d4b98b85e011d69c22, type: 3}
       propertyPath: gridSize.x
       value: 10

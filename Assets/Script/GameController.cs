@@ -17,6 +17,9 @@ public class GameController : GridOperator
     public int amountOfStartingParcels = 3;
     public int amountOfObstacles = 2;
 
+    [SerializeField]
+    private GigaGrid gigaGrid;
+
     /// <summary>
     /// The current score
     /// </summary>
@@ -88,8 +91,8 @@ public class GameController : GridOperator
 
     private void Spawn(GameObject targetObject, Vector3 targetPosition)
     {
-        GameObject newObejct = Instantiate(targetObject, targetPosition - Vector3.up, Quaternion.identity);
-        newObejct.transform.DOMove(targetPosition, spawnDuration);
+        GameObject newObject = gigaGrid.PlaceTile(targetPosition - Vector3.up, targetObject);
+        newObject.transform.DOMove(targetPosition, spawnDuration);
     }
 
     #region Menu Functions
