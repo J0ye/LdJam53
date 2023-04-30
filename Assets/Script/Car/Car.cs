@@ -132,15 +132,21 @@ public class Car : MonoBehaviour
         packages++;
     }
 
-    public void DeliverPackages()
+    public bool DeliverPackages()
     {
         if(packages > 0)
         {
-            GameObject temp = followers[followers.Count - 1];
-            followers.RemoveAt(followers.Count - 1);
-            Destroy(temp);
-            GameController.instance.AddScore(1);
-            packages--;
+            foreach (var temp in followers)
+                Destroy(temp);
+
+            followers = new List<GameObject>();
+            GameController.instance.AddScore(packages);
+            packages = 0;
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

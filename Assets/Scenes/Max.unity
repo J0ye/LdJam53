@@ -914,6 +914,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: tileButtonPrefab
+      value: 
+      objectReference: {fileID: 9014953682346074293, guid: 41066b1c2e09b5e4a954fce56540b915, type: 3}
+    - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
       propertyPath: possibleTiles.Array.size
       value: 34
       objectReference: {fileID: 0}
