@@ -8,6 +8,7 @@ public class GameController : GridOperator
 {
     public static GameController instance;
     public Player player;
+    public Car car;
     public float spawnDuration = 0.5f;
     public GameObject destinationPrefab;
     public GameObject parcelPrefab;
