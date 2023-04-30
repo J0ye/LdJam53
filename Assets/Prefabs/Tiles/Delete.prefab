@@ -61,10 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2888cdc7748442f4591e2e318509bfcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlaced:
-    m_PersistentCalls:
-      m_Calls: []
-  tiles: []
 --- !u!54 &3255872012531073905
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -899,6 +899,7 @@ MonoBehaviour:
   - {fileID: 6934120753552347185, guid: c4640ad0af15d7c48864cdfc7eb6b713, type: 3}
   - {fileID: -7166461262871279361, guid: 1e39666b17cdac642b5dcccb5b8b225e, type: 3}
   - {fileID: 2456707653881357031, guid: 47f4c748377166c4087a06e5ffd3b149, type: 3}
+  - {fileID: 3852686396511164314, guid: 12117cba6448c2a4da094730a27d2abc, type: 3}
   tileButtonPrefab: {fileID: 9014953682346074293, guid: 41066b1c2e09b5e4a954fce56540b915, type: 3}
   maxTiles: 3
 --- !u!1 &4339823149353163399
