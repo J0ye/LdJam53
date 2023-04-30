@@ -85,6 +85,9 @@ public class Car : MonoBehaviour
             case Direction.left:
                 transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
                 break;
+            case Direction.reverse:
+                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles - new Vector3(0.0f, 180.0f, 0.0f));
+                break;
             case Direction.none:
                 break;
         }
@@ -110,6 +113,10 @@ public class Car : MonoBehaviour
                 break;
             case Direction.left:
                 turnTween = transform.DORotate(new Vector3(0f, -90, 0f), turnSpeed);
+                break;
+            case Direction.reverse:
+                Vector3 target = transform.rotation.eulerAngles - new Vector3(0.0f, 180.0f, 0.0f);
+                turnTween = transform.DORotate(target, turnSpeed);
                 break;
             case Direction.none:
                 break;

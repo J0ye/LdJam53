@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Direction { right, left, up, down, none }
+public enum Direction { right, left, up, down, reverse, none }
 
 [RequireComponent(typeof(Tile))]
 public class DirectionTile : MonoBehaviour
