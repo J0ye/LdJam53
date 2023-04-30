@@ -5,6 +5,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
+    public LayerMask lm = new LayerMask();
     [SerializeField]
     GigaGrid gigaGrid;
     private GameObject _objectToPlace;
@@ -28,8 +29,9 @@ public class Player : MonoBehaviour
         {
             //show object and snap to grid
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, lm))
             {
+                Debug.Log(hit.transform.name);
                 var point = gigaGrid.GetNearestGridPoint(hit.point);
                 //place object on mouse pos
                 _objectToPlace.transform.position = point;
@@ -47,6 +49,7 @@ public class Player : MonoBehaviour
 
     public void SetObjectToPlace(GameObject tile)
     {
+        Destroy(_objectToPlace);
         _objectToPlace = Instantiate(tile);
     }
 

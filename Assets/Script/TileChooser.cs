@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TileChooser : MonoBehaviour
@@ -27,6 +28,7 @@ public class TileChooser : MonoBehaviour
 
     public void GenerateRandomTiles()
     {
+        List<Tile> tiles = new List<Tile>();
         // clear existing
         foreach (Transform child in transform)
         {
@@ -36,11 +38,25 @@ public class TileChooser : MonoBehaviour
         // choose random
         for (int i = 0; i < maxTiles; i++)
         {
-            int random = Random.Range(0, possibleTiles.Length);
-            var tile = possibleTiles[random];
+            var tile = GetRandom();
+            if (tile.TryGetComponent<DirectionTile>(out DirectionTile directionTile))
+            {
+                if (tiles.Where(i => i.GetComponent<DirectionTile>()?.direction == directionTile.direction).Any())
+                {
+                    // retry
+                    tile = GetRandom();
+                }
+            }
+
             var newButton = Instantiate(tileButtonPrefab, gameObject.transform);
+            tiles.Add(tile);
             newButton.GetComponent<TileButton>().SetIndex(i);
             newButton.GetComponent<TileButton>().SetTile(tile);
         }
+    }
+
+    public Tile GetRandom()
+    {
+        return possibleTiles[Random.Range(0, possibleTiles.Length)];
     }
 }

@@ -164,7 +164,7 @@ RectTransform:
   m_GameObject: {fileID: 9014953682346074293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5266279944698142064}
@@ -283,10 +283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8c4806a4a017f43bebb76aea45a5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1970976963815708720}
   image: {fileID: 4424523558187966202}
   tileCameraPrefab: {fileID: 7270552675250622643, guid: 463c7498553fbdb4bbb28d8d64bb4517, type: 3}
-  tileCameraTexture: {fileID: 8400000, guid: af8bba8f01a95714faa48847701e73ca, type: 2}
 --- !u!1 &9143091528291546429
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,11 +318,11 @@ RectTransform:
   m_Father: {fileID: 2213682127526237408}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &5169870084352155172
 CanvasRenderer:
   m_ObjectHideFlags: 0
