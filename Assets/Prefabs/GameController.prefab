@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
-  gridSize: {x: 0, y: 0, z: 0}
+  gridSize: {x: 7, y: 1, z: 5}
   edgeCellsWorldPositions: []
   innerCellsWorldPositions: []
   player: {fileID: 0}
+  car: {fileID: 0}
   spawnDuration: 1
   destinationPrefab: {fileID: 2727558679642513626, guid: facecbde8fde9a64f8e183e55ee8ae88, type: 3}
   parcelPrefab: {fileID: 2727558679642513626, guid: 44aae2443f640ae47925991ea09b8cbc, type: 3}
@@ -59,3 +60,4 @@ MonoBehaviour:
   - {fileID: 8293278562367643389, guid: 144bd9220fe937d4e9c0a826bf8d5b06, type: 3}
   amountOfStartingParcels: 3
   amountOfObstacles: 2
+  gigaGrid: {fileID: 0}
