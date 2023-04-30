@@ -22,7 +22,7 @@ public class TileButton : MonoBehaviour
     public void SetTile(Tile tile)
     {
         this.tile = tile;
-        text.text = tile.name;
+        // text.text = tile.name;
 
         if (this.tile.imageRotation > 0)
         {
