@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733bb0f80078fea428aba565f110caef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageTexture: {fileID: 0}
+  imageRotation: 0
 --- !u!65 &1027786686575170792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1298ffbb8e480044dbe199f86300619b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followParcelPrefab: {fileID: 6188015220471729334, guid: bc7268e06cdfb244b9eec23dd5bc74a9, type: 3}
 --- !u!1 &4880338797119996175
 GameObject:
   m_ObjectHideFlags: 0

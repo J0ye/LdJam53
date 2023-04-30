@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Tile))]
 public class PackageTile : MonoBehaviour
 {
-
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent<Car>(out Car car))

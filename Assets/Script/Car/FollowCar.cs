@@ -7,6 +7,7 @@ public class FollowCar : MonoBehaviour
     public GameObject car; // Assign the car GameObject in the Inspector
     public float minDistance = 5.0f; // Set the minimum distance you want to maintain
     public float followSpeed = 1.0f; // Set the follow speed
+    public int positionInChain = 1;
 
     private Vector3 previousCarPosition;
     private Vector3 offsetDirection;
@@ -25,7 +26,7 @@ public class FollowCar : MonoBehaviour
         {
             carDirection.Normalize();
             offsetDirection = Vector3.Lerp(offsetDirection, carDirection, Time.deltaTime * followSpeed);
-            Vector3 targetPosition = carPosition - offsetDirection * minDistance;
+            Vector3 targetPosition = carPosition - (offsetDirection * minDistance) *positionInChain;
 
             transform.position = targetPosition;
         }

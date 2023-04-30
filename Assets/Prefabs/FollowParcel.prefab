@@ -129,5 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   car: {fileID: 0}
-  minDistance: 5
-  followSpeed: 1
+  minDistance: 1.7
+  followSpeed: 2
+  positionInChain: 1

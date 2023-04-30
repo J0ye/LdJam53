@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameController : GridOperator
 {
     public static GameController instance;
     public Player player;
+    public float spawnDuration = 0.5f;
     public GameObject destinationPrefab;
     public GameObject parcelPrefab;
+    public List<GameObject> obstacles = new List<GameObject>();
     [Header("Game Options")]
     public int amountOfStartingParcels = 3;
+    public int amountOfObstacles = 2;
 
     /// <summary>
     /// The current score
@@ -41,22 +45,17 @@ public class GameController : GridOperator
     {
         UIController.instance.tileChooser.GenerateRandomTiles();
         SpawnNewJobs(amountOfStartingParcels);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SpawnObstacles();
     }
 
     public void SpawnInInner(GameObject targetPrefab)
     {
-        Instantiate(targetPrefab, GetRandomInnerCellPosition(), Quaternion.identity);
+        Spawn(targetPrefab, GetRandomInnerCellPosition());
     }
 
     public void SpawnAtEdge(GameObject targetPrefab)
     {
-        Instantiate(targetPrefab, GetRandomEdgeCellPosition(), Quaternion.identity);
+        Spawn(targetPrefab, GetRandomEdgeCellPosition());
     }
     public void SpawnAtEdges()
     {
@@ -75,6 +74,21 @@ public class GameController : GridOperator
             SpawnAtEdge(destinationPrefab);
             SpawnInInner(parcelPrefab);
         }
+    }
+
+    public void SpawnObstacles()
+    {
+        for(int i = 0; i < amountOfObstacles; i++)
+        {
+            int rand = Random.Range(0, obstacles.Count);
+            SpawnInInner(obstacles[rand]);
+        }
+    }
+
+    private void Spawn(GameObject targetObject, Vector3 targetPosition)
+    {
+        GameObject newObejct = Instantiate(targetObject, targetPosition - Vector3.up, Quaternion.identity);
+        newObejct.transform.DOMove(targetPosition, spawnDuration);
     }
 
     #region Menu Functions
@@ -128,7 +142,7 @@ public class GameController : GridOperator
     public void EndLevel()
     {
         // Game is over
-        PauseLevel();
+        //PauseLevel();
         UIController.instance.ShowEndScreen(score);
     }
     #endregion

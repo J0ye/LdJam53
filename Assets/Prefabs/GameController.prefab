@@ -44,3 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e3743650fd3394a8de309d5e381da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  gridSize: {x: 0, y: 0, z: 0}
+  edgeCellsWorldPositions: []
+  innerCellsWorldPositions: []
+  player: {fileID: 0}
+  spawnDuration: 1
+  destinationPrefab: {fileID: 2727558679642513626, guid: facecbde8fde9a64f8e183e55ee8ae88, type: 3}
+  parcelPrefab: {fileID: 2727558679642513626, guid: 44aae2443f640ae47925991ea09b8cbc, type: 3}
+  obstacles:
+  - {fileID: 2707457621744074022, guid: c4ced3454c43fe64ea4364e915ccb28e, type: 3}
+  - {fileID: 3548835900221601027, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
+  - {fileID: 7345773876284381641, guid: b3f620a6391e67c4cbca7d8fd1dc8462, type: 3}
+  - {fileID: 8293278562367643389, guid: 144bd9220fe937d4e9c0a826bf8d5b06, type: 3}
+  amountOfStartingParcels: 3
+  amountOfObstacles: 2

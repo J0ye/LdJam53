@@ -4,22 +4,12 @@ using UnityEngine;
 
 public class CarCrash : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void OnCollisionEnter(Collision collision)
     {
         print("Here");
-        if (collision.gameObject.tag == "Wall")
+        transform.parent.GetComponent<Car>().enabled = false;
+        if (collision.gameObject.CompareTag("Wall"))
         {
             GameController.instance.EndLevel();
         }

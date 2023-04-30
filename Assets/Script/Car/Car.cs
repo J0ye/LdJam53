@@ -7,12 +7,17 @@ public class Car : MonoBehaviour
     public float MoveSpeed = 12f;
     public float turnSpeed = 1f;
     public CarAnimation carAnimation;
+    public bool onGrid = true;
+    public GameObject followParcelPrefab;
+    [HideInInspector]
+    public bool doMove = true;
 
     private Rigidbody Rb;
+    private Ray downCastRay;
+    public List<GameObject> followers = new List<GameObject>();
 
     private Tween turnTween;
     private int packages = 0;
-    private bool doMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +28,19 @@ public class Car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W))
+        #region grid check
+        downCastRay = new Ray(transform.position, Vector3.down);
+        // Check if car is still on grid
+        onGrid = Physics.Raycast(downCastRay);
+        if(!onGrid)
+        {
+            doMove = false;
+            Rb.isKinematic = false;
+            Rb.useGravity = true;
+            GameController.instance.EndLevel();
+        }
+        #endregion
+        if (Input.GetKeyDown(KeyCode.W))
         {
             SwitchOrientation(Direction.up, true);
         }
@@ -42,7 +59,7 @@ public class Car : MonoBehaviour
 
         if(turnTween != null)
         {
-            if (!turnTween.active && !doMove)
+            if (!turnTween.active && !doMove && onGrid)
             {
                 // Do move the car when there is no turning animation
                 doMove = true;
@@ -100,6 +117,11 @@ public class Car : MonoBehaviour
     }
     public void IncreasePackages()
     {
+        GameObject newFollower = Instantiate(followParcelPrefab, transform.position, Quaternion.identity);
+        followers.Add(newFollower);
+        FollowCar followComponent = newFollower.GetComponent<FollowCar>();
+        followComponent.car = gameObject;
+        followComponent.positionInChain = followers.Count;
         packages++;
     }
 
@@ -107,9 +129,18 @@ public class Car : MonoBehaviour
     {
         if(packages > 0)
         {
+            GameObject temp = followers[followers.Count - 1];
+            followers.RemoveAt(followers.Count - 1);
+            Destroy(temp);
             GameController.instance.AddScore(1);
             packages--;
         }
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawRay(downCastRay);
     }
 }
 
