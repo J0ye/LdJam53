@@ -7,8 +7,4 @@ public class Tile : MonoBehaviour
 {
     public bool isPlaced { get; set; }
 
-    public Texture imageTexture;
-
-    public float imageRotation = 0.0f;
-
 }
