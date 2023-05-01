@@ -4,9 +4,18 @@ using UnityEngine;
 using DG.Tweening;
 public class Car : MonoBehaviour
 {
-    public float MoveSpeed = 12f;
+    [Tooltip("This vector represents the maximum values that the speed of the car can have. X = lowest possible speed. Y = highest possible speed.")]
+    public Vector2 speedBounds = new Vector2(1f, 3f);
+    [Tooltip("The amount of speed that gets added to the movement speed each frame")]
+    public float acceleration = 0.01f;
+    [Tooltip("This value is used to decrease the speed when turning. The current gets subtracted by this value at every turn. never below min speed.")]
+    public float turnBreakingValue = 2f;
     public float turnSpeed = 1f;
     public CarAnimation carAnimation;
+    /// <summary>
+    /// The direction the car is going at this moment
+    /// </summary>
+    public Direction drivingDirection = Direction.none;
     public bool onGrid = true;
     public GameObject followParcelPrefab;
     [HideInInspector]
@@ -18,6 +27,8 @@ public class Car : MonoBehaviour
 
     private Tween turnTween;
     private int packages = 0;
+    public float drivingSpeed { get; private set; }
+    public bool debugControls = true;
 
     [SerializeField]
     private AudioClip tireScreechSound;
@@ -52,21 +63,24 @@ public class Car : MonoBehaviour
             GameController.instance.EndLevel();
         }
         #endregion
-        if (Input.GetKeyDown(KeyCode.W))
+        if(debugControls)
         {
-            SwitchOrientation(Direction.up, true);
-        }
-        else if(Input.GetKeyDown(KeyCode.S))
-        {
-            SwitchOrientation(Direction.down, true);
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            SwitchOrientation(Direction.left, true);
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            SwitchOrientation(Direction.right, true);
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                SwitchOrientation(Direction.up, true);
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                SwitchOrientation(Direction.down, true);
+            }
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
+                SwitchOrientation(Direction.left, true);
+            }
+            else if (Input.GetKeyDown(KeyCode.D))
+            {
+                SwitchOrientation(Direction.right, true);
+            }
         }
 
         if(turnTween != null)
@@ -78,7 +92,11 @@ public class Car : MonoBehaviour
                 carAnimation.SwitchTireTrackState(false);
             }
         }
-        if (doMove) transform.position += transform.forward * Time.deltaTime * MoveSpeed;
+        if (doMove)
+        {
+            SetDrivingSpeed(drivingSpeed + acceleration);
+            transform.position += transform.forward * Time.deltaTime * drivingSpeed;
+        }
     }
 
     public void SwitchOrientation(Direction newOrientation)
@@ -103,6 +121,8 @@ public class Car : MonoBehaviour
             case Direction.none:
                 break;
         }
+        SetDrivingSpeed(drivingSpeed - turnBreakingValue);
+        drivingDirection = newOrientation;
     }
     public void SwitchOrientation(Direction newOrientation, bool doAnimation)
     {
@@ -133,6 +153,8 @@ public class Car : MonoBehaviour
             case Direction.none:
                 break;
         }
+        drivingDirection = newOrientation;
+        SetDrivingSpeed(drivingSpeed - turnBreakingValue);
 
         audioSource.PlayOneShot(tireScreechSound);
     }
@@ -177,6 +199,12 @@ public class Car : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawRay(downCastRay);
+    }
+
+    public void SetDrivingSpeed(float newVal)
+    {
+        drivingSpeed = newVal;
+        drivingSpeed = Mathf.Clamp(drivingSpeed, speedBounds.x, speedBounds.y);
     }
 }
 

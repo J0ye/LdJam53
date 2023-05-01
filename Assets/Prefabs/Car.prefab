@@ -4993,7 +4993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03647f7f2aff27644a2d364885a26b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 12
+  speedBounds: {x: 1, y: 6}
+  acceleration: 0.001
+  turnBreakingValue: 0.5
   turnSpeed: 0.5
   carAnimation: {fileID: 1764749013338085554}
   onGrid: 1

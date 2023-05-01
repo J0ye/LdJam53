@@ -9,7 +9,7 @@ public class DirectionTile : MonoBehaviour
 {
     public Direction direction;
 
-    public void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         if (gameObject.GetComponent<Tile>().isPlaced)
         {

@@ -384,16 +384,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2727558679642513626, guid: 44aae2443f640ae47925991ea09b8cbc, type: 3}
     - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
+      propertyPath: amountOfObstacles
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
       propertyPath: destinationPrefab
       value: 
       objectReference: {fileID: 2727558679642513626, guid: facecbde8fde9a64f8e183e55ee8ae88, type: 3}
     - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
       propertyPath: obstacles.Array.size
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
       propertyPath: amountOfStartingParcels
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9021691995773496827, guid: 6e737f12881c6ee41b0a4396bd6736fb, type: 3}
       propertyPath: obstacles.Array.data[0]
@@ -697,6 +701,10 @@ PrefabInstance:
       propertyPath: lm.m_Bits
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 732577486482074449, guid: 9bc48d24542bc1a45bc88362e28d22ec, type: 3}
+      propertyPath: acceleration
+      value: 0.0005
+      objectReference: {fileID: 0}
     - target: {fileID: 1764749013338085554, guid: 9bc48d24542bc1a45bc88362e28d22ec, type: 3}
       propertyPath: doPunch
       value: 0
@@ -735,7 +743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3523654537026733192, guid: 9bc48d24542bc1a45bc88362e28d22ec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.75
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3523654537026733192, guid: 9bc48d24542bc1a45bc88362e28d22ec, type: 3}
       propertyPath: m_LocalRotation.w
@@ -821,6 +829,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4339823148659809320, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: m_CellSize.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339823148659809320, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: m_CellSize.y
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 4339823148659809321, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
       propertyPath: m_SizeDelta.x
       value: 600
@@ -918,17 +934,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6881090862571342205, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881090862571342205, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
       propertyPath: m_SizeDelta.y
       value: -804.28
       objectReference: {fileID: 0}
     - target: {fileID: 6881090862571342205, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 31.5492
+      value: 14.00025
       objectReference: {fileID: 0}
     - target: {fileID: 6881090862571342205, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -393.14
       objectReference: {fileID: 0}
+    - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: possibleTiles.Array.size
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796702207644010794, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
+      propertyPath: possibleTiles.Array.data[29]
+      value: 
+      objectReference: {fileID: 6067155836306973347, guid: 796b6810dcd4fd648be3ec13c14694bf, type: 3}
     - target: {fileID: 9101020668710563930, guid: 2de95bc15e3d3f24480621507827feae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -50,7 +50,7 @@ MonoBehaviour:
   innerCellsWorldPositions: []
   player: {fileID: 0}
   car: {fileID: 0}
-  spawnDuration: 1
+  spawnAnimationDuration: 0.5
   destinationPrefab: {fileID: 2727558679642513626, guid: facecbde8fde9a64f8e183e55ee8ae88, type: 3}
   parcelPrefab: {fileID: 2727558679642513626, guid: 44aae2443f640ae47925991ea09b8cbc, type: 3}
   obstacles:
@@ -58,6 +58,35 @@ MonoBehaviour:
   - {fileID: 3548835900221601027, guid: 5643d07e03d587244b5f093e8acee8ea, type: 3}
   - {fileID: 7345773876284381641, guid: b3f620a6391e67c4cbca7d8fd1dc8462, type: 3}
   - {fileID: 8293278562367643389, guid: 144bd9220fe937d4e9c0a826bf8d5b06, type: 3}
+  - {fileID: 6606654182853608353, guid: ac41afc698af85d4faf240630d177bd9, type: 3}
+  - {fileID: 6731019947182516811, guid: c1ee70f81855cdf4e8bd8195913ed9ee, type: 3}
+  - {fileID: 5879374494180714994, guid: cb3e4cca051798745810a4de6535d657, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
+  - {fileID: 3663810733373059343, guid: 642b3a30c33b17843ac8dcdc10815c83, type: 3}
   amountOfStartingParcels: 3
-  amountOfObstacles: 2
+  amountOfObstacles: 3
+  obstacleWaveCooldown: 120
   gigaGrid: {fileID: 0}
