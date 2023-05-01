@@ -188,6 +188,10 @@ PrefabInstance:
       value: Left Wall Opposite
       objectReference: {fileID: 0}
     - target: {fileID: 6934120753552347185, guid: c4640ad0af15d7c48864cdfc7eb6b713, type: 3}
+      propertyPath: uiImage
+      value: 
+      objectReference: {fileID: 2800000, guid: 40deb608ec71d6d4bb854a2fd5a8ba13, type: 3}
+    - target: {fileID: 6934120753552347185, guid: c4640ad0af15d7c48864cdfc7eb6b713, type: 3}
       propertyPath: walls.Array.size
       value: 2
       objectReference: {fileID: 0}
