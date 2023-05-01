@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733bb0f80078fea428aba565f110caef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiImage: {fileID: 2800000, guid: f9f2dcbbf28e1bb4a81bfd6e9426f467, type: 3}
   consumesSpace: 1
 --- !u!65 &8282684788798868518
 BoxCollider:

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Tile : MonoBehaviour
 {
+    public Texture uiImage;
     public bool isPlaced { get; set; }
 
     public bool consumesSpace = true;

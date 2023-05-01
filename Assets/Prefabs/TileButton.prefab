@@ -285,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 4424523558187966202}
   tileCameraPrefab: {fileID: 7270552675250622643, guid: 463c7498553fbdb4bbb28d8d64bb4517, type: 3}
+  cameraOffset: 20
 --- !u!1 &9143091528291546429
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,8 +321,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: 10, y: 10}
+  m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &5169870084352155172
 CanvasRenderer:

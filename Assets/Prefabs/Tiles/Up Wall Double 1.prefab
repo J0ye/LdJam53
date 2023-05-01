@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1004334855330401219, guid: 47f4c748377166c4087a06e5ffd3b149, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1965359175626197698, guid: 47f4c748377166c4087a06e5ffd3b149, type: 3}
       propertyPath: m_Name
       value: Up Wall Double 1
@@ -55,6 +59,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2456707653881357031, guid: 47f4c748377166c4087a06e5ffd3b149, type: 3}
+      propertyPath: uiImage
+      value: 
+      objectReference: {fileID: 2800000, guid: bc2325acb42c03c47a451589cfbcc9bf, type: 3}
     - target: {fileID: 2456707653881357031, guid: 47f4c748377166c4087a06e5ffd3b149, type: 3}
       propertyPath: walls.Array.size
       value: 2
