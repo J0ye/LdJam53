@@ -28,7 +28,6 @@ public class TileButton : MonoBehaviour
     {
         tileCameraTexture = new RenderTexture(new RenderTextureDescriptor(1024, 1024));
         tileCamera = Instantiate(tileCameraPrefab, gameObject.transform);
-        tileCamera.transform.parent = null;
         tileCamera.transform.position = new Vector3(5.0f + (index * cameraOffset), 0.0f, 5.0f + (index * cameraOffset));
         Camera camera = tileCamera.transform.Find("Camera").gameObject.GetComponent<Camera>();
         camera.targetTexture = tileCameraTexture;
