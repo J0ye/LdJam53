@@ -47,6 +47,7 @@ public class GameController : GridOperator
     // Start is called before the first frame update
     void Start()
     {
+        PauseLevel();
         UIController.instance.tileChooser.GenerateRandomTiles();
         SpawnNewJobs(amountOfStartingParcels);
         SpawnObstacles();
@@ -128,6 +129,11 @@ public class GameController : GridOperator
     {
         Time.timeScale = 1;
         isPaused = false;
+    }
+
+    public bool gamePaused()
+    {
+        return isPaused;
     }
 
     /// <summary>
