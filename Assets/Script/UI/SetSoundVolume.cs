@@ -8,7 +8,7 @@ public class SetSoundVolume : MonoBehaviour
     public AudioMixer mixer;
     public void SetLevel(float sliderValue)
     {
-        mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
+        mixer.SetFloat("MainVol", Mathf.Log10(sliderValue) * 20);
     }
 
     // Start is called before the first frame update
