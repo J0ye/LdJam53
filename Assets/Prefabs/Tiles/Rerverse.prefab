@@ -259,7 +259,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c02ea980ccaa8b64683d17878e13325c, type: 2}
+  - {fileID: 2100000, guid: 28d107fa57a79fa48b988f49ffa07a31, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733bb0f80078fea428aba565f110caef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiImage: {fileID: 2800000, guid: bc2325acb42c03c47a451589cfbcc9bf, type: 3}
+  uiImage: {fileID: 2800000, guid: 8e5362aeb6fcfb34e861dce0b716003a, type: 3}
   consumesSpace: 1
 --- !u!65 &5114450827926732468
 BoxCollider:
@@ -343,7 +343,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.01, y: 0.01, z: 0.01}
+  m_Size: {x: 0.04, y: 0.04, z: 0.04}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &8171847006605912235
 MonoBehaviour:

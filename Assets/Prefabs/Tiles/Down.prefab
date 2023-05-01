@@ -224,7 +224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5977221242802859146}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -259,7 +259,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c02ea980ccaa8b64683d17878e13325c, type: 2}
+  - {fileID: 2100000, guid: 45979c9d8dc31da498554b0e4c2cb07d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733bb0f80078fea428aba565f110caef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiImage: {fileID: 2800000, guid: c6f6ed4c231ff2b448e41caf0da99fca, type: 3}
+  uiImage: {fileID: 2800000, guid: b3c74388a0aa35a4b8de67da1bd351fb, type: 3}
   consumesSpace: 1
 --- !u!65 &5231712402411902625
 BoxCollider:

@@ -126,6 +126,10 @@ PrefabInstance:
       value: Left Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6934120753552347185, guid: c4640ad0af15d7c48864cdfc7eb6b713, type: 3}
+      propertyPath: uiImage
+      value: 
+      objectReference: {fileID: 2800000, guid: 00a7c3424aeeed2489c9339afabe2a8b, type: 3}
+    - target: {fileID: 6934120753552347185, guid: c4640ad0af15d7c48864cdfc7eb6b713, type: 3}
       propertyPath: walls.Array.size
       value: 1
       objectReference: {fileID: 0}
