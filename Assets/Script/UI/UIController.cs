@@ -17,9 +17,11 @@ public class UIController : MonoBehaviour
 
     [SerializeField]
     private GameObject endScreen;
+    public GameObject pauseMenuButton;
     public GameObject instructionsScreen;
     public GameObject mainMenuScreen;
     public GameObject settingsScreen;
+    public GameObject pauseScreen;
 
     public GameObject instructionsButton;
     public GameObject restartButton;
@@ -42,7 +44,8 @@ public class UIController : MonoBehaviour
         {
             Destroy(this);
         }
-
+        tileChooser.gameObject.SetActive(false);
+        pauseMenuButton.SetActive(false);
         audioSource = gameObject.GetComponent<AudioSource>();
     }
 
@@ -87,11 +90,27 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public void TogglePauseMenu()
+    {
+        if (pauseScreen.activeSelf)
+        {
+            pauseScreen.SetActive(false);
+            GameController.instance.ResumeLevel();
+        }
+        else
+        {
+            GameController.instance.PauseLevel();
+            pauseScreen.SetActive(true);
+        }
+    }
+
     public void StartGame()
     {
         mainMenuScreen.SetActive(false);
         instructionsScreen.SetActive(false);
         endScreen.SetActive(false);
+        tileChooser.gameObject.SetActive(true);
+        pauseMenuButton.SetActive(true);
         GameController.instance.StartLevel();
     }
 

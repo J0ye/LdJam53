@@ -90,7 +90,7 @@ public class GameController : GridOperator
         /// <summary>
         /// Starts the current level
         /// </summary>
-        public void StartLevel()
+    public void StartLevel()
     {
         // Spawn the first customer
         ResumeLevel();
@@ -129,6 +129,7 @@ public class GameController : GridOperator
     {
         Time.timeScale = 1;
         isPaused = false;
+        car.SetDrivingSpeed(car.speedBounds.x);
     }
 
     public bool gamePaused()

@@ -10,16 +10,4 @@ public class SetSoundVolume : MonoBehaviour
     {
         mixer.SetFloat("MainVol", Mathf.Log10(sliderValue) * 20);
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
