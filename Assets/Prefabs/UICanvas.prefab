@@ -5491,10 +5491,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'In the bottom left of the screen you can find tiles to modify the playing
-    field. Use the left mouse button to select a tile you want to place. Hover over
-    a free space in the arena grid and place the tile by pressing left mouse button
-    again.
+  m_text: 'In the lower left corner of the screen you will find tiles that you can
+    use to change the game board. Use the left mouse button to select a tile you
+    want to place. Move the mouse cursor over a free space in the arena grid and
+    place the tile by pressing the left mouse button again.
 
 
     Have fun!'
@@ -6455,7 +6455,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Your goal is to deliver as many packages as possible to destination points
-    without crashing the car or driving off the arena
+    without crashing the car or driving it off the game board.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3307e76d0ba27740a043d608a25bee4, type: 2}
   m_sharedMaterial: {fileID: 2299553188735357385, guid: a3307e76d0ba27740a043d608a25bee4, type: 2}

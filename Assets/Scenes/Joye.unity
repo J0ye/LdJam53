@@ -709,6 +709,10 @@ PrefabInstance:
       propertyPath: acceleration
       value: 0.0005
       objectReference: {fileID: 0}
+    - target: {fileID: 732577486482074449, guid: 9bc48d24542bc1a45bc88362e28d22ec, type: 3}
+      propertyPath: debugControls
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1764749013338085554, guid: 9bc48d24542bc1a45bc88362e28d22ec, type: 3}
       propertyPath: doPunch
       value: 0
