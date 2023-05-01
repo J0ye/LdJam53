@@ -9,13 +9,14 @@ public class GameController : GridOperator
     public static GameController instance;
     public Player player;
     public Car car;
-    public float spawnDuration = 0.5f;
+    public float spawnAnimationDuration = 0.5f;
     public GameObject destinationPrefab;
     public GameObject parcelPrefab;
     public List<GameObject> obstacles = new List<GameObject>();
     [Header("Game Options")]
     public int amountOfStartingParcels = 3;
     public int amountOfObstacles = 2;
+    public float obstacleWaveCooldown = 180f;
 
     public GigaGrid gigaGrid;
 
@@ -67,19 +68,21 @@ public class GameController : GridOperator
             int rand = Random.Range(0, obstacles.Count);
             Spawn(obstacles[rand], GetRandomInnerCellPosition());
         }
+
+        Invoke("SpawnObstacles", obstacleWaveCooldown);
     }
 
     private void Spawn(GameObject targetObject, Vector3 targetPosition)
     {
         GameObject newObject = gigaGrid.PlaceTile(targetPosition - Vector3.up, targetObject);
-        newObject.transform.DOMove(targetPosition, spawnDuration);
+        newObject.transform.DOMove(targetPosition, spawnAnimationDuration);
 
     }
 
     private void SpawnNotOnGrid(GameObject targetObject, Vector3 targetPosition)
     {
         GameObject newObject = Instantiate(targetObject, targetPosition - Vector3.up, Quaternion.identity);
-        newObject.transform.DOMove(targetPosition, spawnDuration);
+        newObject.transform.DOMove(targetPosition, spawnAnimationDuration);
     }
 
         #region Menu Functions
