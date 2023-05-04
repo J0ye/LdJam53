@@ -72,8 +72,10 @@ public class Player : MonoBehaviour
 
                 audioSource.PlayOneShot(actionSound);
 
-                // Generate new tiles to choose frmo
-                UIController.instance.tileChooser.GenerateRandomTiles();
+                // Generate new tiles to choose from
+                //UIController.instance.tileChooser.GenerateRandomTiles();
+                //Draw new card
+                UIController.instance.tileChooser.DrawNewCard();
             }
         }
     }

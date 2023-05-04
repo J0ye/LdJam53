@@ -801,6 +801,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8155408275710609399, guid: 9bc48d24542bc1a45bc88362e28d22ec, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bc48d24542bc1a45bc88362e28d22ec, type: 3}
 --- !u!1 &1469833594 stripped

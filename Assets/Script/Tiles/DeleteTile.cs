@@ -17,8 +17,10 @@ public class DeleteTile : Tile
             //Destroy(gameObject);
             // Remove active tile selection from player
             GameController.instance.player.RemoveObjectToPlace();
-            // Generate new tiles to choose frmo
-            UIController.instance.tileChooser.GenerateRandomTiles();
+            // Generate new tiles to choose from
+            // UIController.instance.tileChooser.GenerateRandomTiles();
+            // Draw new card
+            UIController.instance.tileChooser.DrawNewCard();
         }
         return false;
     }

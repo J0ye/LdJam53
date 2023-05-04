@@ -3381,6 +3381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410f2c4adbbb854448f2cd74393003ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileInHand: {fileID: 0}
   possibleTiles:
   - {fileID: 4681983664138210138, guid: db03931f7e16cf1468498209b45fe44b, type: 3}
   - {fileID: 4681983664138210138, guid: 6e9c9cdff920f44419e4449f8ebb83c4, type: 3}
@@ -5888,7 +5889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 31.5492, y: -443.13998}
+  m_AnchoredPosition: {x: 31.549316, y: -443.14}
   m_SizeDelta: {x: 35.0979, y: -904.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5204060896350901632

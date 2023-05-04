@@ -6,34 +6,17 @@ using UnityEngine.UI;
 
 public class TileButton : MonoBehaviour
 {
-    [SerializeField]
-    private RawImage image;
-
+    public RawImage image;
     public GameObject tileCameraPrefab;
+    public int cameraOffset = 20;
+    public TileChooser tileChooser;
 
     private RenderTexture tileCameraTexture;
-
-    private GameObject tileCamera;
-
-    public int cameraOffset = 20;
-
-    Tile tile;
+    private Tile tile;
     // Start is called before the first frame update
     void Start()
     {
         
-    }
-
-    public void SetIndex(int index)
-    {
-        /*
-        tileCameraTexture = new RenderTexture(new RenderTextureDescriptor(1024, 1024));
-        tileCamera = Instantiate(tileCameraPrefab, gameObject.transform);
-        tileCamera.transform.position = new Vector3(50.0f + (index * cameraOffset), 0.0f, 50.0f + (index * cameraOffset));
-        Camera camera = tileCamera.transform.Find("Camera").gameObject.GetComponent<Camera>();
-        camera.targetTexture = tileCameraTexture;
-        camera.aspect = 1.334f;
-        */
     }
 
     public void SetTile(Tile tile)
@@ -41,8 +24,6 @@ public class TileButton : MonoBehaviour
         try
         {
             this.tile = tile;
-            //GameObject tileClone = Instantiate(tile.gameObject, tileCamera.transform);
-            //tileClone.transform.localPosition = Vector3.zero;
             image.texture = tileCameraTexture;
             if (tile.uiImage != null)
             {
@@ -59,5 +40,15 @@ public class TileButton : MonoBehaviour
     public void SelectTile()
     {
         GameController.instance.player.SetObjectToPlace(tile.gameObject);
+        tileChooser.tileInHand = this;
+    }
+
+    /// <summary>
+    /// Returns this buttons tile
+    /// </summary>
+    /// <returns>This tile as Tile object</returns>
+    public Tile GetTargetTileAsTile()
+    {
+        return tile;
     }
 }
