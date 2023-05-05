@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
 
     // Members
     public TileChooser tileChooser;
+    public GameObject redoButton;
 
     [SerializeField]
     private TMP_Text scoreText;
@@ -45,6 +46,7 @@ public class UIController : MonoBehaviour
             Destroy(this);
         }
         tileChooser.gameObject.SetActive(false);
+        redoButton.SetActive(false);
         pauseMenuButton.SetActive(false);
         audioSource = gameObject.GetComponent<AudioSource>();
     }
@@ -110,6 +112,7 @@ public class UIController : MonoBehaviour
         instructionsScreen.SetActive(false);
         endScreen.SetActive(false);
         tileChooser.gameObject.SetActive(true);
+        redoButton.SetActive(true);
         pauseMenuButton.SetActive(true);
         GameController.instance.StartLevel();
     }
