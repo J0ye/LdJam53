@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
     {
         RemoveObjectToPlace();
         _objectToPlace = Instantiate(tile);
+        print(_objectToPlace);
     }
 
     public void RemoveObjectToPlace()
@@ -71,7 +72,7 @@ public class Player : MonoBehaviour
                 _objectToPlace = null;
 
                 audioSource.PlayOneShot(actionSound);
-
+                GameController.instance.placedTilesCount++;
                 // Generate new tiles to choose from
                 //UIController.instance.tileChooser.GenerateRandomTiles();
                 //Draw new card

@@ -60,7 +60,7 @@ public class TileChooser : MonoBehaviour
             Tile tile = GetRandom();
             if (tile.TryGetComponent<DirectionTile>(out DirectionTile directionTile))
             {
-                for(int j = 0; j < 3; j++) // Repeat check three times. oops, its hard coded 
+                for(int j = 0; j < 2; j++) // Repeat check two times. oops, its hard coded 
                 {
                     if (tiles.Where(i => i.GetComponent<DirectionTile>()?.direction == directionTile.direction).Any() || directionTile.direction == GameController.instance.car.drivingDirection)
                     {
@@ -81,32 +81,35 @@ public class TileChooser : MonoBehaviour
 
     public void DrawNewCard()
     {
-        //Remove old card from lists
-        tiles.Remove(tileInHand.GetTargetTileAsTile());
-        inHand.Remove(tileInHand);
-        //Destroy button obejct
-        Destroy(tileInHand.gameObject);
-
-        // choose new random
-        Tile tile = GetRandom();
-        if (tile.TryGetComponent<DirectionTile>(out DirectionTile directionTile))
+        if(tileInHand)
         {
-            for (int j = 0; j < 3; j++) // Repeat check three times. oops, its hard coded 
+            //Remove old card from lists
+            tiles.Remove(tileInHand.GetTargetTileAsTile());
+            inHand.Remove(tileInHand);
+            //Destroy button obejct
+            Destroy(tileInHand.gameObject);
+
+            // choose new random
+            Tile tile = GetRandom();
+            if (tile.TryGetComponent<DirectionTile>(out DirectionTile directionTile))
             {
-                if (tiles.Where(i => i.GetComponent<DirectionTile>()?.direction == directionTile.direction).Any() || directionTile.direction == GameController.instance.car.drivingDirection)
+                for (int j = 0; j < 3; j++) // Repeat check three times. oops, its hard coded 
                 {
-                    // retry
-                    tile = GetRandom();
+                    if (tiles.Where(i => i.GetComponent<DirectionTile>()?.direction == directionTile.direction).Any() || directionTile.direction == GameController.instance.car.drivingDirection)
+                    {
+                        // retry
+                        tile = GetRandom();
+                    }
                 }
             }
-        }
 
-        GameObject newButton = Instantiate(tileButtonPrefab, gameObject.transform);
-        tiles.Add(tile);
-        TileButton tileButton = newButton.GetComponent<TileButton>();
-        tileButton.tileChooser = this;
-        tileButton.SetTile(tile);
-        inHand.Add(tileButton);
+            GameObject newButton = Instantiate(tileButtonPrefab, gameObject.transform);
+            tiles.Add(tile);
+            TileButton tileButton = newButton.GetComponent<TileButton>();
+            tileButton.tileChooser = this;
+            tileButton.SetTile(tile);
+            inHand.Add(tileButton);
+        }
     }
 
     public Tile GetRandom()

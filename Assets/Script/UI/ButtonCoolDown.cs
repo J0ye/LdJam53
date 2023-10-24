@@ -22,6 +22,7 @@ public class ButtonCoolDown : MonoBehaviour
             if(child.TryGetComponent<TMP_Text>(out buttonText))
             {
                 startText = buttonText.text;
+                buttonText.gameObject.SetActive(false);
                 print("starttext: " + startText);
             }
         }
@@ -51,8 +52,10 @@ public class ButtonCoolDown : MonoBehaviour
     protected IEnumerator DoCooldown()
     {
         button.interactable = false;
+        buttonText.gameObject.SetActive(true);
         yield return new WaitForSeconds(coolDownTime);
         button.interactable = true;
+        buttonText.gameObject.SetActive(false);
     }
 
     protected void WriteTimer(float timeToWrite)

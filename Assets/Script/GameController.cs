@@ -20,6 +20,8 @@ public class GameController : GridOperator
 
     public GigaGrid gigaGrid;
 
+    public int placedTilesCount = 0;
+
     /// <summary>
     /// The current score
     /// </summary>
